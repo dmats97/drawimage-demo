@@ -1,5 +1,5 @@
-//プチコンぽい感じにスプライトを扱うデモ
-//2019/02/01 Dai Matsmoto
+//スプライトシートから画像を描画する
+//2019/02/15 Dai Matsmoto
 
 #include <citro2d.h>
 
@@ -27,8 +27,8 @@ int main(){
   C2D_TextBuf g_Buffer;
   C2D_Text g_Text;
   g_Buffer = C2D_TextBufNew(256);
-	C2D_TextParse(&g_Text, g_Buffer, "スプライトシート内のイメージデータを\n画像として描画するテスト");
-	C2D_TextOptimize(&g_Text);
+  C2D_TextParse(&g_Text, g_Buffer, "スプライトシート内のイメージデータを\n画像として描画するテスト");
+  C2D_TextOptimize(&g_Text);
 
   //スプライトシート
   static C2D_SpriteSheet sheet;
@@ -52,7 +52,7 @@ int main(){
     C2D_DrawImageAt(Image, 0.0f, 0.0f, 0.0f, NULL, 1.0f, 1.0f);
     C2D_SceneBegin(bottom);
     C2D_TargetClear(bottom, C2D_Color32(0xA0, 0xA0, 0xFF, 0xFF));
-	  C2D_DrawText(&g_Text, 0, 0.0f, 0.0f, 0.5f, 0.5f, 0.5f);
+    C2D_DrawText(&g_Text, 0, 0.0f, 0.0f, 0.5f, 0.5f, 0.5f);
     C3D_FrameEnd(0);
 
     gspWaitForVBlank();
